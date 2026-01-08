@@ -35,11 +35,11 @@
          * 4. comprobar
          ***/
         let contenedor = document.getElementById("contenedor");
-        for (i=1;i<=10;i++) {
+        for (i=65;i<=90;i++) {
             let tecla = document.createElement("div");
             tecla.className = "tecla";
-            tecla.innerHTML = i;
-
+            //tecla.textContent = i;
+            tecla.textContent = String.fromCharCode(i);
             if(i%2==0){
                 tecla.style.backgroundColor='yellow'
             }
