@@ -108,7 +108,33 @@
             }
         }
 
+        function moduloCalculo() {
+            let resultado = 0
+            let modulo = 0
+            let div = 0
+            for (let i = 1; i <= 10000; i++) {
+                div = i
 
+            }
+            resultado=calculaSumaPotencias(i)
+            if (resultado == i) {
+                console.log("Bingo: " + resultado);
+            }
+            resultado = 0;
+        }
+        
+        moduloCalculo();
+        function calculaSumaPotencias(div) {
+            let resto = 0;
+            let resultado = 0;
+            div = i;
+            while (div >= 9) {
+                resto = div % 10;
+                div = parseInt(div / 10);
+                resultado += resto * resto * resto
+            }
+            
+        }
 
 
 
@@ -118,8 +144,7 @@
         document.getElementById("resultado2").textContent = multiplicarSinAsterisco(2, 4)
         document.getElementById("resultado3").textContent = multiplicaciónTriple(2, 2, 2)
         document.getElementById("resultado4").textContent = calcularMedia(2, 5, 46)
-        document.getElementById("resultado5").textContent = sumaCubos(153)
-
+        document.getElementById("resultado5").textContent = moduloCalculo()
     </script>
 </body>
 
