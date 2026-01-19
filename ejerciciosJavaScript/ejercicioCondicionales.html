@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Number Presentacion</title>
+    <style>
+        .ejercicio {
+            border: 1px black solid;
+            border-radius: 5px;
+        }
+
+        .resultado {
+            background-color: rgb(195, 192, 192);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicios - Tipos numbers</h1>
+    <div class="ejercicio">
+        <h3>Ejercicio 1</h3>
+        <p>
+            Numero Secreto
+        </p>
+        <div class="resultado 1" id="resultado1">
+        </div>
+    </div>
+
+    <script>
+        function numeroSecreto() {
+            let numeroOculto = Math.floor.random(1,100);
+            let input = prompt("Introduce un numero");
+            while(input!=numeroOculto){
+                if(input>numeroOculto){
+                    input=prompt("El numero es más pequeño");
+                }
+                else if(input<numeroOculto){
+                    input=prompt("El numero es más grande");
+                }
+            }
+            if(input==numeroOculto){
+                alert("Numero Acertado");
+            }
+            return input
+
+        }
+
+        document.getElementById("Ejercico1").textContent=numeroSecreto;
+
+
+
+
+    </script>
+</body>
+
+</html>

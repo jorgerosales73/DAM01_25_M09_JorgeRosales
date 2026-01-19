@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Number Presentacion</title>
+    <style>
+        .ejercicio {
+            border: 1px black solid;
+            border-radius: 5px;
+        }
+
+        .resultado {
+            background-color: rgb(195, 192, 192);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicios - Tipos numbers</h1>
+    <div class="ejercicio">
+        <h3>Ejercicio 1</h3>
+        <p>
+            Haz una función que de dos números pasados por parámetros indica (saca por consola) cúal de ellos es mayor.
+        </p>
+        <div class="resultado 1" id="resultado1">
+        </div>
+    </div>
+    <div class="ejercicio">
+        <h3>Ejercicio 2</h3>
+        <p>Haz una función que calcule (sin usar *) la multiplicación de dos números.
+        </p>
+        <div class="resultado 2" id="resultado2">
+        </div>
+    </div>
+    <div class="ejercicio">
+        <h3> Ejercicio 3 </h3>
+        <p>Utilizando la función anterior haz una función que calcule la multiplicación de 3 números.</p>
+        <div class="resultado 3" id="resultado3">
+        </div>
+    </div>
+    <div class="ejercicio">
+        <h3> Ejercicio 4</h3>
+        <p>Crea una función que permita calcular la nota media de 3 notas para que devuelva la media con 1 decimal.</p>
+        <div class="resultado 4" id="resultado4"></div>
+    </div>
+    </div>
+    <div class="ejercicio">
+        <h3>Ejercicio 5</h3>
+        <p>Encuentra entre los primeros 10.000 números naturales los números que completan la siguiente propiedad: La
+            suma del cubo de cada una de sus cifras y que dé el mismo número:
+            → por ejemplo 153: 1*1*1+5*5*5+3*3*3= 1³+5³+3³=153.
+        </p>
+        <div class="resultado 5" id="resultado5"></div>
+    </div>
+    <script>
+        numeroMayor()
+        //Ejercicio 1
+        function numeroMayor(num1, num2) {
+            let resultado = ""
+            if (num1 > num2) {
+                resultado = (`${num1} es major que ${num2}`)
+            } else {
+                resultado = (`${num2} es major que ${num1}`)
+            }
+            return resultado
+        }
+        //Ejercicio 2
+        multiplicarSinAsterisco()
+        function multiplicarSinAsterisco(num1, num2) {
+            let resultado = 0
+            for (i = 0; i < num2; i++) {
+                resultado += num1
+            }
+            return resultado
+        }
+        // Ejercicio 3 
+        function multiplicaciónTriple(num1, num2, num3) {
+            let resultado = 0
+            resultado = multiplicarSinAsterisco(num1, num2)
+            resultado = multiplicarSinAsterisco(resultado, num3)
+            return resultado
+        }
+        //Ejercicio 4 
+        function calcularMedia(nota1, nota2, nota3) {
+            let resultado = 0
+            resultado = ((nota1 + nota2 + nota3) / 3)
+            return resultado.toFixed(1)
+        }
+        //Ejercicio 5
+        function multiplica(num1, num2) {
+            let resultado = 0
+            for (i = 1; i = num1; i++) {
+                resultado += num2
+            }
+            return resultado
+        }
+        //153
+        function sumaCubos() {
+            for (let i = 1; i <= 10000; i++) {
+                while (num > 9) {
+                    let modulo = num % 10;
+                    resultado += multiplica(num, multiplica(num, num))
+                    num = num / 10
+                }
+                resultado += resultado += multiplica(num, multiplica(num, num))
+            }
+        }
+
+        function moduloCalculo() {
+            let resultado = 0
+            let modulo = 0
+            let div = 0
+            for (let i = 1; i <= 10000; i++) {
+                div = i
+
+            }
+            resultado=calculaSumaPotencias(i)
+            if (resultado == i) {
+                console.log("Bingo: " + resultado);
+            }
+            resultado = 0;
+        }
+        
+        moduloCalculo();
+        function calculaSumaPotencias(div) {
+            let resto = 0;
+            let resultado = 0;
+            div = i;
+            while (div >= 9) {
+                resto = div % 10;
+                div = parseInt(div / 10);
+                resultado += resto * resto * resto
+            }
+            
+        }
+
+
+
+
+
+        document.getElementById("resultado1").textContent = numeroMayor(8, 17)
+        document.getElementById("resultado2").textContent = multiplicarSinAsterisco(2, 4)
+        document.getElementById("resultado3").textContent = multiplicaciónTriple(2, 2, 2)
+        document.getElementById("resultado4").textContent = calcularMedia(2, 5, 46)
+        document.getElementById("resultado5").textContent = moduloCalculo()
+    </script>
+</body>
+
+</html>
