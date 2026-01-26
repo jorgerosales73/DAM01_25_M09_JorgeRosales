@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Eventos Presentacion</title>
+    <style>
+        .ejercicio {
+            border: 1px black solid;
+            border-radius: 5px;
+        }
+
+        .resultado {
+            background-color: rgb(195, 192, 192);
+        }
+        #cuadrado{
+            background-color: paleturquoise;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Ejercicios de Eventos</h1>
+    <div id="ejercicio">
+        <h3>Ejercicio 1</h3>
+        <p>
+            Al hacer clic en el botón se lance un mensaje al usuario.
+        </p>
+        <button id="boton">Botón</button>
+
+        <div id="resultado1" class="resultado1">
+        </div>
+
+        <h3>Ejercicio 2</h3>
+        <p>A hacer doble clic salte otra alerta.
+        </p>
+        <button id="boton2">Doble Click</button>
+        <div id="resultado2"></div>
+
+        <h3>Ejercicio 3</h3>
+        <p>Al detectar que el ratón pasa por encima del elemento se vaya escribiendo en consola su posición X,Y</p>
+        <div id="cuadrado"></div>
+    </div>
+    <script>
+        //Ejercicio 1
+        let boton1 = document.getElementById("boton")
+        boton1.addEventListener("click", () => alert("Alerta"))
+        //Ejercicio 2
+        let boton2 = document.getElementById("boton2")
+        boton2.addEventListener("dblclick", () => alert("DobleClick"))
+        //Ejercicio3
+        let puntero = document.getElementById("cuadrado")
+        puntero.addEventListener("")
+
+    </script>
+</body>
+
+</html>
