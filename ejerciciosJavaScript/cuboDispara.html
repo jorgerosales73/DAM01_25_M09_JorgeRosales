@@ -13,7 +13,7 @@
                 text-align: center;
                 opacity: 0.6;
             }
-            #cuadrado{
+            #nave{
                 width: 60px;
                 height: 60px;
                 background-color: red;
@@ -21,32 +21,32 @@
                 bottom: 20px;
                 left: 0%;
                 transition:transform 0.05s linear;
-
                 z-index: 10;
             }
             .bala{
-                width: 30px;
-                height: 30px;
-                background-color: magenta;
+                width: 20px;
+                height: 50px;
+                background-color: lime;
                 position: absolute;
                 bottom: 80px;
                 border-radius: 4px;
                 pointer-events: none;
-                box-shadow: 0 0 10px rgba(231, 76, 60, 0.8);
+                
                 transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
             }
         </style>
     </head>
     <body>
         <h2>Mueve el Raton y haz click</h2>
-        <div id="cuadrado"></div>
+        
+        <img src="imagenespng/images.png"  alt="cohete" id="nave">
         <script>
-        const seguidor = document.getElementById('cuadrado');
+        const nave = document.getElementById('nave');
         let currentX = 0;
 
         window.addEventListener('mousemove', (raton) => {
             currentX = raton.clientX - 30;
-            seguidor.style.transform = `translateX(${currentX}px)`;
+            nave.style.transform = `translateX(${currentX}px)`;
         });
 
         // Evento de disparo al hacer clic
