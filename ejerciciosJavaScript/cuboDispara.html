@@ -37,34 +37,33 @@
         </style>
     </head>
     <body>
-        <h2>Mueve el Raton y haz click</h2>
-        
-        <img src="imagenespng/images.png"  alt="cohete" id="nave">
+        <h2>Cohete que dispara</h2>
+        <img src="imagenespng/images.png" alt="cohete" id="nave">
         <script>
         const nave = document.getElementById('nave');
-        let currentX = 0;
+        let ejeX = 0;
 
-        window.addEventListener('mousemove', (raton) => {
-            currentX = raton.clientX - 30;
-            nave.style.transform = `translateX(${currentX}px)`;
+        document.addEventListener('mousemove', (raton) => {
+            ejeX = raton.clientX - 30;
+            nave.style.transform = `translateX(${ejeX}px)`;
         });
 
-        // Evento de disparo al hacer clic
-        window.addEventListener('click', () => {
+        document.addEventListener('click', () => {
             dispararCubo();
         });
 
         function dispararCubo() {
             const cubo = document.createElement('div');
             cubo.classList.add('bala');
-            cubo.style.left = `${currentX + 20}px`;
+            cubo.style.left = `${ejeX + 20}px`;
             document.body.appendChild(cubo);
             setTimeout(() => {
-                cubo.style.transform = `translateY(-${window.innerHeight + 100}px)`;
-            }, 10);
+                cubo.style.transform = `translateY(-${window.innerHeight + 20}px)`;
+                console.log(window.innerHeight )
+            }, 5);
             setTimeout(() => {
                 cubo.remove();
-            }, 850);
+            }, 475);
         }
     </script>
     </body>

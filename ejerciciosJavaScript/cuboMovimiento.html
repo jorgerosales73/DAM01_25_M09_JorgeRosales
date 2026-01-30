@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cubito</title>
+    <style>
+        #cubo{
+            width: 50px;
+            height: 50px;
+            background-color: black;
+            position: absolute;
+            bottom: 20px;
+            left: 0%;
+            transition:transform 0.05s linear;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div id="cubo"></div>
+    <script>
+        document.getElementById("cubo")
+        let ejeX=0
+        document.addEventListener('mousemove', (raton) => {
+            ejeX = raton.clientX - 30;
+            nave.style.transform = `translateX(${ejeX}px)`;
+        });
+    </script>
+</body>
+</html>
