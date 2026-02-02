@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3: Objetos</title>
+    <style>
+        .ejercicio {
+            border: 1px black solid;
+            border-radius: 5px;
+        }
+        .resultado {
+        background-color: rgb(195, 192, 192);
+        }
+    </style>
+</head>
+<body>
+    <div class="ejercicio" id="ejercicio1">
+        <h4>Ejercicio 1</h4>
+        <p>Al objeto tvSamsung añadele iterativamente varias características y que sea al usuario quien indique el valor.</p>
+        <div class="resultado" id="resultado1"></div>
+    </div>
+    <script>
+        const tvSamsung={
+            nombre:"TV Samsung 42",
+            categoria: "Televisores",
+            unidades:4,
+            precio: 345.95,  
+        };
+        for( let caracteristicas in tvSamsung){
+            
+            prompt("Valor a añadir")
+        }
+    </script>
+</body>
+</html>
