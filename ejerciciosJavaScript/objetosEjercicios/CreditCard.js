@@ -5,12 +5,15 @@ class TarjetaCredito{
     fechaVencimiento;
     #CVV;
     cantidadCredito
-    constructor(nombreTitular, numeroTrajeta, fechaVencimiento, CVV, cantidadCredito){
+    #_tarjetaActiva
+    constructor(nombreTitular, numeroTarjeta, fechaVencimiento, CVV, cantidadCredito, tarjetaActiva){
         this.nombreTitular=nombreTitular
-        this.numeroTarjeta=numeroTrajeta
+        this.numeroTarjeta=numeroTarjeta
         this.fechaVencimiento=fechaVencimiento
         this.#CVV=CVV
         this.cantidadCredito=cantidadCredito
+        this.#_tarjetaActiva=tarjetaActiva
+
     }
     
     //Metodos
@@ -19,7 +22,7 @@ class TarjetaCredito{
             console.log("No tienes suficiente credito")
         }else{
             this.cantidadCredito-=cantidad
-            console.log(`Has retirado ${cantidad} tu credito restante es de ${this.cantidadCredito}`)
+            console.log(`Has retirado ${cantidad} te quedan ${this.cantidadCredito}`)
         }       
     }
     pagarCompra(cantidadPago){
@@ -27,7 +30,7 @@ class TarjetaCredito{
             console.log("No tienes suficiente credito")
         }else{
             this.cantidadCredito-=cantidadPago
-            console.log(`Has pagado ${cantidadPago} tu credito restante es de ${this.cantidadCredito}`)
+            console.log(`Has pagado ${cantidadPago} te quedan ${this.cantidadCredito}`)
         }       
     }
     pagarFactura(cantidadPago){
@@ -35,7 +38,7 @@ class TarjetaCredito{
             console.log("No tienes suficiente credito")
         }else{
             this.cantidadCredito-=cantidadPago
-            console.log(`Has pagado ${cantidadPago} tu credito restante es de ${this.cantidadCredito}`)
+            console.log(`Has pagado ${cantidadPago} te quedan ${this.cantidadCredito}`)
         }       
     }
 
@@ -46,3 +49,8 @@ console.log(tarjeta1)
 tarjeta1.retirarDinero(1000)
 tarjeta1.pagarCompra(2000)
 tarjeta1.pagarFactura(1500)
+let tarjeta2=new TarjetaCredito("Maria Lopez", "9876 5432 1098 7654", "11/24", "456", 3000)
+console.log(tarjeta2)
+tarjeta2.retirarDinero(500)
+tarjeta2.pagarCompra(1000)
+tarjeta2.pagarFactura(2000)
