@@ -19,7 +19,7 @@ class Rectangulo extends FiguraGeometrica{
 }
 class Triangulo extends FiguraGeometrica{
     base;
-    altuera;
+    altura;
     constructor(nombre, base, altura){
         super(nombre)
         this.base=base
@@ -39,6 +39,9 @@ class Circulo extends FiguraGeometrica{
         return Math.PI*this.radio**2
     }
 }
+
+
+
 let rectangulo1=new Rectangulo("campo", 5, 3)
 rectangulo1.calcularArea()
 console.log(rectangulo1.calcularArea())
