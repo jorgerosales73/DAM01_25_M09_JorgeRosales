@@ -1,4 +1,5 @@
 const { createServer } = require('node:http');
+const { url } = require('node:inspector');
 
 const hostname = '127.0.0.1';
 const port = 3001;
@@ -33,15 +34,21 @@ const server = createServer((req, res) => {
   if (req.method === "GET" && req.url.startsWith("/students/")) {
 
     // 1. Extraer id de la URL
-    // 2. Buscar alumno en el array
-    // 3. Si no existe → 404
-    // 4. Si existe → devolver 200 + alumno
+    const id = req.url.split("/");
+    const idAlumno= id[2];
 
+    // 2. Buscar alumno en el array
+    const alumno = students.find(s => s.id === idAlumno);
+    // 3. Si no existe → 404
+    if (!alumno) {
+      return sendJson(res, 404, { message: "Alumno no encontrado" });
+    }
+    // 4. Si existe → devolver 200 + alumno
+    sendJson(res, 200, alumno);
   }
 
   // TODO 2: DELETE /students/:id
   if (req.method === "DELETE" && req.url.startsWith("/students/")) {
-
     // 1. Extraer id
     // 2. Comprobar si existe
     // 3. Eliminarlo del array
